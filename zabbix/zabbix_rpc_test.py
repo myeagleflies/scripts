@@ -58,7 +58,7 @@ if  __name__ == "__main__":
         sys.stderr.write(str(e) + '\n')
 
     try:
-        for host in zapi.host.get({ 'monitored_hosts' : True,'extendoutput' : True}):
+        for host in zapi.host.get({ 'monitored_hosts' : True,'output' : 'extend'}):
             if host['dns'] == "":
                 print "%s - %s - %s" % (host['host'], host['ip'], host['useip'])
             else:
